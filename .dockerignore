@@ -1,0 +1,2 @@
+# Exclude node dependencies
+node_modules

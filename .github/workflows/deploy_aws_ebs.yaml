@@ -1,0 +1,42 @@
+name: Deploy master
+on:
+  push:
+    branches:
+      - 
+        none # "main"
+  pull_request:
+      branches: 
+      - 
+        none # "main"
+
+# Allows you to run this workflow manually from Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout source code
+      uses: actions/checkout@v3
+
+    - name: Generate deployment package
+      run: zip -r deploy.zip . -x '*.git*'
+
+    - name: Deploy to EB
+      uses: einaregilsson/beanstalk-deploy@v21
+      with:
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        application_name: frontend
+        environment_name: Frontend-env
+        version_label: ${{ github.sha }}
+        region: eu-west-2
+        deployment_package: deploy.zip
+
+
+# Using Github Actions instead of Travis for Single Container Deployment to AWS Elastic Beanstalk
+# https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/11437142#questions/17673926
+
+# Beanstalk Deploy
+# https://github.com/einaregilsson/beanstalk-deploy
