@@ -1,4 +1,4 @@
-# React Application inside Docker container deployed into AWS
+# React Application inside Docker container deployed into AWS Elastic Beanstalk
 
 <br />
 
