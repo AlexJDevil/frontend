@@ -51,19 +51,18 @@
 ```yaml
    docker container run --name frontend-prod --rm --detach --publish 8080:80 alexjdevil/frontend-prod:v1.0
 ```
-* Accessing the app from a browser
+* Accessing our app from a browser
 ```yaml
    http://localhost:8080
 ```
 * Using GitHub Actions to test and upload our app into Docker Hub
 ```yaml
    .github/workflows/build_test_app.yaml
-   .github/workflows/build_push_app_docker_hub.yaml
-   .github/workflows/deploy_aws_ebs.yaml
+   .github/workflows/build_push_app_docker_hub.yaml 
 ```
-* Deploy it into AWS hosting service
+* Using GitHub Actions to Deploy our app into AWS hosting service
 ```yaml
-
+   .github/workflows/deploy_aws_ebs.yaml
 ```
 <br />
 
