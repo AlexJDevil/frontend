@@ -29,7 +29,7 @@ jobs:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: frontend
-        environment_name: Frontend-env-1
+        environment_name: Frontend-env
         version_label: ${{ github.sha }}
         region: eu-west-2
         deployment_package: deploy.zip
