@@ -30,9 +30,10 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: frontend
         environment_name: Frontend-env-1
-        version_label: 12345
+        version_label: ${{ github.sha }}
         region: eu-west-2
         deployment_package: deploy.zip
+        use_existing_version_if_available: true
 
 
 # Using Github Actions instead of Travis for Single Container Deployment to AWS Elastic Beanstalk
