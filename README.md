@@ -60,7 +60,7 @@
    .github/workflows/build_test_app.yaml
    .github/workflows/build_push_app_docker_hub.yaml 
 ```
-* Using GitHub Actions to Deploy our app into AWS hosting service
+* Using GitHub Actions to Deploy our app into AWS Elastic Beanstalk
 ```yaml
    .github/workflows/deploy_aws_ebs.yaml
 ```
